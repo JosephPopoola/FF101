@@ -11,6 +11,9 @@ $body-color: #F2F2F2
 a 
    text-decoration: none
 
+p 
+  color: $primary
+
 body
   font-family: 'Roboto', sans-serif
   background-color: $body-color
@@ -28,7 +31,7 @@ body
   padding-top: 10vh
 
 .home-title
-  position: absolute
+  position: fixed
   padding-left: 10vw
   padding-top: 5vh
 
@@ -37,6 +40,7 @@ body
   font-size: 5.5rem
   letter-spacing: 0.7rem
   font-weight: 100
+  width: 500px
 
 .home-items
   height: 100%
@@ -48,6 +52,9 @@ body
   margin-right: 5rem
   padding: (random(4)+4)+em 4em
   background-color: $secondary
+
+.tile-text
+  color: $primary-invert
 
 .section
   min-height: 80vh
@@ -64,7 +71,7 @@ body
   height: 5vh
 
 .navbar-item
-  margin-right: 15px
+  margin-right: 25px
   color: $secondary
   font-weight: lighter
   &:hover

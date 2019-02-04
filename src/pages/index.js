@@ -16,15 +16,17 @@ export default class IndexPage extends React.Component {
         <div className="home-container">
           <div className="container home-items">
             {posts.map(({ node: post }) => (
-              <div className="content horizontal-tile" key={post.id}>
+              <Link
+                className="content horizontal-tile"
+                key={post.id}
+                to={post.fields.slug}
+              >
                 <p>
-                  <Link className="has-text-primary" to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
+                  <span className="tile-text">{post.frontmatter.title}</span>
                   <span> &bull; </span>
                   <small>{post.frontmatter.date}</small>
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

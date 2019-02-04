@@ -32,12 +32,12 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/about">
                 About
               </Link>
-              <Link className="navbar-item" to="/music">
+              {/* <Link className="navbar-item" to="/music">
                 Music
-              </Link>
-              <Link className="navbar-item" to="/design">
+              </Link> */}
+              {/* <Link className="navbar-item" to="/design">
                 Design
-              </Link>
+              </Link> */}
               <Link className="navbar-item" to="/contact">
                 Contact
               </Link>
