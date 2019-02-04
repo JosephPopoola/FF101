@@ -8,8 +8,11 @@ $secondary: #c4c4c4
 $primary-invert: $text-color-invert
 $body-color: #F2F2F2
 
+$break-small: 500px;
+$break-large: 1000px;
+
 a 
-   text-decoration: none
+  text-decoration: none
 
 p 
   color: $primary
@@ -18,6 +21,7 @@ body
   font-family: 'Roboto', sans-serif
   background-color: $body-color
   min-height: 100vh
+  max-height: 100vh
   margin: 0
   overflow-y: hidden
 
@@ -29,18 +33,23 @@ body
   height: 100vh
   padding-left: 10vw
   padding-top: 10vh
+  @media screen and (max-width: $break-large)
+    padding-top: 0
 
 .home-title
   position: fixed
   padding-left: 10vw
   padding-top: 5vh
 
-.home-title-text
+.home-title-text 
   margin: 0
   font-size: 5.5rem
   letter-spacing: 0.7rem
   font-weight: 100
   width: 500px
+  @media screen and (max-width: $break-large)
+    font-size: 2rem
+    width: 50vw
 
 .home-items
   height: 100%
@@ -52,6 +61,10 @@ body
   margin-right: 5rem
   padding: (random(4)+4)+em 4em
   background-color: $secondary
+  @media screen and (max-width: $break-large)
+    min-width: 200px
+    margin-right: 3rem
+    padding: (random(2)+2)+em 2em
 
 .tile-text
   color: $primary-invert
