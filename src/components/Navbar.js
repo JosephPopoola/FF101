@@ -23,25 +23,23 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav className="navbar" role="navigation" aria-label="main-navigation">
-        <div className="container">
-          <div id="navMenu" className="navbar-menu">
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/">
-                Home
-              </Link>
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              {/* <Link className="navbar-item" to="/music">
+        <div id="navMenu" className="navbar-menu">
+          <div className="navbar-start has-text-centered">
+            <Link className="navbar-item" to="/">
+              Home
+            </Link>
+            <Link className="navbar-item" to="/about">
+              About
+            </Link>
+            {/* <Link className="navbar-item" to="/music">
                 Music
               </Link> */}
-              {/* <Link className="navbar-item" to="/design">
+            {/* <Link className="navbar-item" to="/design">
                 Design
               </Link> */}
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-            </div>
+            <Link className="navbar-item" to="/contact">
+              Contact
+            </Link>
           </div>
         </div>
       </nav>
