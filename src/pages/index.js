@@ -10,11 +10,11 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <section className="section">
-          <div className="">
-            <h1 className="has-text-weight-bold is-size-2">FOREVER FORWARD</h1>
-          </div>
-          <div className="container">
+        <div className="home-title">
+          <p className="home-title-text">FOREVER FORWARD</p>
+        </div>
+        <div className="home-container">
+          <div className="container home-items">
             {posts.map(({ node: post }) => (
               <div className="content horizontal-tile" key={post.id}>
                 <p>
@@ -27,7 +27,7 @@ export default class IndexPage extends React.Component {
               </div>
             ))}
           </div>
-        </section>
+        </div>
       </Layout>
     );
   }

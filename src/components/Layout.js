@@ -45,7 +45,7 @@ const TemplateWrapper = ({ children }) => (
             sizes="16x16"
           />
           <link
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400"
+            href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400"
             rel="stylesheet"
           />
           <link
