@@ -2,8 +2,33 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
+import anime from "animejs";
 
 export default class IndexPage extends React.Component {
+  componentDidMount() {
+    anime({
+      targets: ".home-title",
+      translateY: 450,
+      direction: "alternate",
+      loop: false,
+      easing: "cubicBezier(0.990, -0.360, 0.590, 1.000)",
+      duration: 1700
+    });
+
+    let tl = anime.timeline({
+      easing: "easeIn",
+      duration: 1000
+    });
+
+    tl.add({
+      targets: ".horizontal-tile",
+      translateY: 100,
+      direction: "alternate",
+      loop: true,
+      easing: "easeInOutSine"
+    });
+  }
+
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
