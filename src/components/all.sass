@@ -7,7 +7,7 @@ $primary-invert: $text-color-invert
 $body-color: #F2F2F2
 
 $break-small: 900px;
-$break-large: 1000px;
+$break-large: 1025px;
 
 a 
   text-decoration: none
@@ -59,27 +59,31 @@ body
   flex-direction: column
   flex-wrap: wrap
   min-width: 100vw
-  justify-content: space-around
   overflow-x: auto
   height: 50%
   padding-left: 10vw
   align-items: center
   @media screen and (max-device-width: $break-large) //applies to everything smaller than $break-large(1000px)
     padding-left: 5vw
+    height: 75%
+    padding-top: 35vh
 
 .horizontal-tile
   display: flex
   min-width: 300px
-  margin-right: 5rem
-  padding: (random(4)+4)+em 4em
+  margin: 2rem
+  padding: (random(3)+3)+em 3em
   background-color: $secondary
   align-items: center
   text-align: center
   justify-content: center
+  @media screen and (max-device-width: $break-large)
+    min-width: 400px
+    min-height: 180px
+    margin: 0
   @media screen and (max-device-width: $break-small)
-    min-width: 500px
-    min-height: 300px
-    margin-right: 3rem
+    min-height: 200px
+    margin: 2rem
 
 .tile-text
   color: $primary-invert
