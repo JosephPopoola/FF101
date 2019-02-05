@@ -13,7 +13,7 @@ export default class IndexPage extends React.Component {
         <div className="home-title">
           <p className="home-title-text">FOREVER FORWARD</p>
         </div>
-        <div className="home-container">
+        <div className="home-wrapper">
           <div className="container home-items">
             {posts.map(({ node: post }) => (
               <Link
