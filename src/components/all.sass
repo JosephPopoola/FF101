@@ -25,7 +25,7 @@ body
 
 .home-title
   position: fixed
-  top: -400px
+  top: -350px
   padding-left: 10vw
   padding-top: 5vh  
   @media screen and (max-device-width: $break-large)
@@ -61,7 +61,7 @@ body
   flex-wrap: wrap
   min-width: 100vw
   overflow-x: auto
-  height: 50%
+  height: 40%
   padding-left: 10vw
   align-items: center
   @media screen and (max-device-width: $break-large) //applies to everything smaller than $break-large(1000px)
@@ -71,13 +71,17 @@ body
 
 .horizontal-tile
   display: flex
-  min-width: 300px
-  margin: 2rem
-  padding: (random(3)+3)+em 3em
+  min-width: 20vw
+  max-width: 20vw
+  height: 20%
+  padding: 3em
   background-color: $secondary
   align-items: center
   text-align: center
   justify-content: center
+  font-weight: 300
+  &:hover
+    background-color: $primary
   @media screen and (max-device-width: $break-large)
     min-width: 400px
     min-height: 180px

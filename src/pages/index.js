@@ -8,24 +8,11 @@ export default class IndexPage extends React.Component {
   componentDidMount() {
     anime({
       targets: ".home-title",
-      translateY: 450,
+      translateY: 400,
       direction: "alternate",
       loop: false,
       easing: "cubicBezier(0.990, -0.360, 0.590, 1.000)",
-      duration: 1700
-    });
-
-    let tl = anime.timeline({
-      easing: "easeIn",
-      duration: 1000
-    });
-
-    tl.add({
-      targets: ".horizontal-tile",
-      translateY: 100,
-      direction: "alternate",
-      loop: true,
-      easing: "easeInOutSine"
+      duration: 2000
     });
   }
 
