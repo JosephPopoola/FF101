@@ -45,15 +45,14 @@ const TemplateWrapper = ({ children }) => (
             sizes="16x16"
           />
           <link
-            href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400"
-            rel="stylesheet"
-          />
-          <link
             rel="mask-icon"
             href="/img/safari-pinned-tab.svg"
             color="#ff4400"
           />
-          {/* <meta name="theme-color" content="#fff" /> */}
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400"
+            rel="stylesheet"
+          />
 
           <meta property="og:type" content="business.business" />
           <meta property="og:title" content={data.site.siteMetadata.title} />
