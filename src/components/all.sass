@@ -1,19 +1,18 @@
-$text-color: #292929
-$text-color-invert: #F2F2F2
-
-$primary: $text-color
+$primary: #292929
 $secondary: #c4c4c4
-$primary-invert: $text-color-invert
+$primary-lighter: #F2F2F2
 $body-color: #F2F2F2
 
 $break-small: 900px;
 $break-large: 1025px;
 
 a 
+  color: $primary-lighter
   text-decoration: none
 
 p 
   color: $primary
+  font-weight: 250
 
 body
   font-family: 'Roboto', sans-serif
@@ -76,14 +75,14 @@ body
   height: 20%
   padding: 3em
   margin: 2px
-  background-color: $secondary
+  background-color: $primary
   align-items: center
   text-align: center
   justify-content: center
   font-weight: 300
   transition-duration: 1s
   &:hover
-    background-color: $primary
+    background-color: $primary-lighter
   @media screen and (max-device-width: $break-large)
     min-width: 400px
     min-height: 180px
@@ -93,7 +92,20 @@ body
     margin: 1rem
 
 .tile-text
-  color: $primary-invert
+  color: $secondary
+  transition-duration: 0.7s
+  &:hover
+    color: $primary
+
+.modal 
+  color: $secondary
+  background-color: $primary
+  p
+    color: $secondary
+
+
+.modal-close-icon
+  fill: $secondary
 
 .navbar .navbar-menu
   text-align: right

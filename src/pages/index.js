@@ -1,10 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import anime from "animejs";
+import Modal from "react-responsive-modal";
+import { HTMLContent } from "../components/Content";
 
 export default class IndexPage extends React.Component {
+  state = {
+    open: false,
+    post: null
+  };
+
+  onOpenModal = post => {
+    this.setState({ open: true, post: post });
+  };
+
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
+
   componentDidMount() {
     anime({
       targets: ".home-title",
@@ -17,8 +32,10 @@ export default class IndexPage extends React.Component {
   }
 
   render() {
+    const { open, post } = this.state;
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
+    const PostContent = HTMLContent;
 
     return (
       <Layout>
@@ -28,20 +45,42 @@ export default class IndexPage extends React.Component {
         <div className="home-wrapper">
           <div className="container home-items">
             {posts.map(({ node: post }) => (
-              <Link
+              <div
                 className="content horizontal-tile"
                 key={post.id}
-                to={post.fields.slug}
+                onClick={() => this.onOpenModal(post)}
               >
                 <p>
                   <span className="tile-text">{post.frontmatter.title}</span>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
                 </p>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
+        {post ? (
+          <Modal
+            classNames={{ modal: "modal", closeIcon: "modal-close-icon" }}
+            open={open}
+            onClose={this.onCloseModal}
+            center
+          >
+            <section className="section">
+              <div className="container content">
+                <div className="columns">
+                  <div className="column is-10 is-offset-1">
+                    <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+                      {post.frontmatter.title}
+                    </h1>
+                    <p>{post.frontmatter.description}</p>
+                    <PostContent content={post.html} />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </Modal>
+        ) : (
+          <div />
+        )}
       </Layout>
     );
   }
@@ -68,9 +107,11 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          html
           frontmatter {
             title
             templateKey
+            description
             date(formatString: "MMMM DD, YYYY")
           }
         }
