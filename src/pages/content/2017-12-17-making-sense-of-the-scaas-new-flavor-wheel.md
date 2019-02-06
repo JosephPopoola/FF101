@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Man
-date: 2016-12-17T15:04:10.000Z
+date: 2019-02-06T15:04:10.000Z
 description: Man is just here you know... mad ting
 tags:
   - flavor
