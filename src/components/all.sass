@@ -62,10 +62,10 @@ body
   min-width: 100vw
   overflow-x: auto
   height: 40%
-  padding-left: 10vw
+  padding: 0 10vw
   align-items: center
   @media screen and (max-device-width: $break-large) //applies to everything smaller than $break-large(1000px)
-    padding-left: 5vw
+    padding: 0 5vw
     height: 75%
     padding-top: 35vh
 
@@ -75,11 +75,13 @@ body
   max-width: 20vw
   height: 20%
   padding: 3em
+  margin: 2px
   background-color: $secondary
   align-items: center
   text-align: center
   justify-content: center
   font-weight: 300
+  transition-duration: 1s
   &:hover
     background-color: $primary
   @media screen and (max-device-width: $break-large)
@@ -88,7 +90,7 @@ body
     margin: 0
   @media screen and (max-device-width: $break-small)
     min-height: 200px
-    margin: 2rem
+    margin: 1rem
 
 .tile-text
   color: $primary-invert
@@ -108,6 +110,7 @@ body
   margin-right: 25px
   color: $primary
   font-weight: lighter
+  transition-duration: 1s
   &:hover
     color: $secondary
 

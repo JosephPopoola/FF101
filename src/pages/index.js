@@ -11,8 +11,8 @@ export default class IndexPage extends React.Component {
       translateY: 400,
       direction: "alternate",
       loop: false,
-      easing: "cubicBezier(0.990, -0.360, 0.590, 1.000)",
-      duration: 2000
+      easing: "easeOutCirc",
+      duration: 2500
     });
   }
 
