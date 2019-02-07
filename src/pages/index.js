@@ -74,6 +74,7 @@ export default class IndexPage extends React.Component {
         {post ? (
           <Modal
             classNames={{ modal: "modal", closeIcon: "modal-close-icon" }}
+            animationDuration={1500}
             open={open}
             onClose={this.onCloseModal}
             center
