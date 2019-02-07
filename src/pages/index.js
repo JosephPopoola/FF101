@@ -21,14 +21,28 @@ export default class IndexPage extends React.Component {
   };
 
   componentDidMount() {
-    anime({
-      targets: ".home-title",
-      translateY: 400,
-      direction: "alternate",
-      loop: false,
-      easing: "easeOutCirc",
-      duration: 2500
-    });
+    anime
+      .timeline()
+      .add({
+        targets: ".home-title",
+        translateY: [-400, 0],
+        opacity: [0, 1],
+        easing: "easeOutCirc",
+        duration: 2500
+      })
+      .add(
+        {
+          targets: ".horizontal-tile",
+          opacity: [0, 1],
+          translateY: [-100, 0],
+          easing: "easeOutExpo",
+          duration: 1500,
+          delay: function(el, i) {
+            return 50 * i;
+          }
+        },
+        "-=400"
+      );
   }
 
   render() {
