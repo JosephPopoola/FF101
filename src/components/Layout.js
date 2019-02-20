@@ -1,6 +1,8 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
+import P5Wrapper from "react-p5-wrapper";
+import sketch from "./Sketch4";
 
 import Navbar from "../components/Navbar";
 import "./all.sass";
@@ -19,6 +21,16 @@ const TemplateWrapper = ({ children }) => (
     `}
     render={data => (
       <div>
+        <div
+          style={{
+            position: "fixed",
+            height: "100vh",
+            width: "100vw",
+            zIndex: "-99"
+          }}
+        >
+          <P5Wrapper sketch={sketch} />
+        </div>
         <Helmet>
           <html lang="en" />
           <title>{data.site.siteMetadata.title}</title>
