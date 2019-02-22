@@ -65,8 +65,7 @@ export default function sketch(p) {
 
   p.setup = function () {
     p.createCanvas(window.innerWidth, window.innerHeight);
-    p.stroke(Light);
-    p.fill(Light);
+    changeColour(Dark);
     p.background(0, 0);
 
     for (let index = 0; index < nParticles; index++) {
@@ -83,8 +82,8 @@ export default function sketch(p) {
     for (let i = 0; i < lines.length; i++) {
       p.line(lines[i][0].x, lines[i][0].y, lines[i][1].x, lines[i][1].y);
     }
-    window.setTimeout(changeColour, 15000, Dark);
-    window.setTimeout(changeColour, 27000, Lighter);
+    window.setTimeout(changeColour, 10000, Light);
+    window.setTimeout(changeColour, 25000, Lighter);
     window.setTimeout(end, 30000);
   };
 
