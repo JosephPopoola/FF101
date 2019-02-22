@@ -1,5 +1,5 @@
 export default function sketch(p) {
-  let nParticles = 50;
+  let nParticles = 25;
   let particles = [];
   let particleSize = 200;
   let maxCounter = 150;
@@ -61,6 +61,8 @@ export default function sketch(p) {
 
   const Dark = 'rgba(41,41,41,0.2)';
   const Light = 'rgba(196,196,196,0.2)';
+  const Lighter = 'rgba(242,242,242,0.2)';
+
   p.setup = function () {
     p.createCanvas(window.innerWidth, window.innerHeight);
     p.stroke(Light);
@@ -81,10 +83,17 @@ export default function sketch(p) {
     for (let i = 0; i < lines.length; i++) {
       p.line(lines[i][0].x, lines[i][0].y, lines[i][1].x, lines[i][1].y);
     }
-    window.setTimeout(endDat, 30000);
+    window.setTimeout(changeColour, 15000, Dark);
+    window.setTimeout(changeColour, 27000, Lighter);
+    window.setTimeout(end, 30000);
   };
 
-  let endDat = function () {
-    p.noLoop();
+  let changeColour = function (colour) {
+    p.stroke(colour);
+    p.fill(colour);
   };
+
+  let end = function () {
+    p.noLoop();
+  }
 }
