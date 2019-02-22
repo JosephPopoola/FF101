@@ -9,12 +9,11 @@ export default class Index extends React.Component {
   render() {
     return (
       <Layout>
-        <div className="container">
-          <div className="content">
+        <div className="base-container">
+          <div className="base-content">
             <h1>Contact</h1>
-            <div>Email: foreverforwarddesign@gmail.com</div>
-            <div>Instagram: @foreverforwarddesign</div>
-            <div>Twitter: @foreverforwarddesign</div>
+            <div><strong>Email:</strong> foreverforwarddesign@gmail.com</div>
+            <div><strong>Instagram:</strong> <a href="https://www.instagram.com/foreverforwarddesign" target="_blank">@foreverforwarddesign</a></div>
           </div>
         </div>
       </Layout>
