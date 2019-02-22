@@ -1,7 +1,7 @@
-import p5 from "p5";
+// import p5 from "p5";
 
-export default function sketch(p) {
-  p.setup = function() {};
+// export default function sketch(p) {
+//   p.setup = function() {};
 
-  p.draw = function() {};
-}
+//   p.draw = function() {};
+// }

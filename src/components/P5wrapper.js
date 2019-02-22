@@ -1,12 +1,9 @@
 import React from 'react';
-try {
-    let p5 = require('p5');
-  } catch (e) {
-    console.log(e)
-  }
+let p5;
 
 export default class P5Wrapper extends React.Component {
     componentDidMount() {
+        p5 = require('p5');
         this.canvas = new p5(this.props.sketch, this.wrapper);
         if (this.canvas.myCustomRedrawAccordingToNewPropsHandler) {
             this.canvas.myCustomRedrawAccordingToNewPropsHandler(this.props);
@@ -14,6 +11,7 @@ export default class P5Wrapper extends React.Component {
     };
 
     componentWillReceiveProps(newprops) {
+        p5 = require('p5');
         if (this.props.sketch !== newprops.sketch) {
             this.canvas.remove();
             this.canvas = new p5(newprops.sketch, this.wrapper);

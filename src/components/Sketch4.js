@@ -1,5 +1,3 @@
-import p5 from "p5";
-
 export default function sketch(p) {
   let nParticles = 50;
   let particles = [];
@@ -8,24 +6,27 @@ export default function sketch(p) {
   let lines = [];
 
   function checkCollisions() {
-    lines = [];
-    for (let i = 0; i < nParticles; i++) {
-      for (let j = 0; j < nParticles; j++) {
-        if (i !== j) {
-          let distance = p5.Vector.dist(
-            particles[i].position,
-            particles[j].position
-          );
-          if (distance < particleSize) {
-            if (particles[i].counter === 0) {
-              particles[i].direction.rotate(Math.random());
-              particles[i].counter = maxCounter;
+    if (window !== undefined) {
+      let p5 = require('p5');
+      lines = [];
+      for (let i = 0; i < nParticles; i++) {
+        for (let j = 0; j < nParticles; j++) {
+          if (i !== j) {
+            let distance = p5.Vector.dist(
+              particles[i].position,
+              particles[j].position
+            );
+            if (distance < particleSize) {
+              if (particles[i].counter === 0) {
+                particles[i].direction.rotate(Math.random());
+                particles[i].counter = maxCounter;
+              }
+              if (particles[j].counter === 0) {
+                particles[j].direction.rotate(Math.random());
+                particles[j].counter = maxCounter;
+              }
+              lines.push([particles[i].position, particles[j].position, distance]);
             }
-            if (particles[j].counter === 0) {
-              particles[j].direction.rotate(Math.random());
-              particles[j].counter = maxCounter;
-            }
-            lines.push([particles[i].position, particles[j].position, distance]);
           }
         }
       }
