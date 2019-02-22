@@ -37,7 +37,7 @@ export default class IndexPage extends React.Component {
           translateY: [-100, 0],
           easing: "easeOutExpo",
           duration: 1500,
-          delay: function(el, i) {
+          delay: function (el, i) {
             return 50 * i;
           }
         },
@@ -94,8 +94,8 @@ export default class IndexPage extends React.Component {
             </section>
           </Modal>
         ) : (
-          <div />
-        )}
+            <div />
+          )}
       </Layout>
     );
   }
